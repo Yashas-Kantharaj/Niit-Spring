@@ -1,4 +1,4 @@
-package Basics;
+package basics;
 
 public class Car implements Vehicle{
 	public void drive() {

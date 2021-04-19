@@ -1,4 +1,4 @@
-package Basics;
+package basics;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
