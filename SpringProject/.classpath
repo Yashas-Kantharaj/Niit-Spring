@@ -7,8 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring5.3.6"/>
-	<classpathentry kind="lib" path="C:/Users/yasha/Downloads/aspectjweaver-1.8.13.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yasha/Downloads/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yasha/Downloads/aspectjrt-1.9.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yasha/Downloads/aspectjtools-1.9.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
