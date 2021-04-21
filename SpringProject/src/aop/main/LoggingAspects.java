@@ -7,10 +7,13 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 public class LoggingAspects {
-	@Before("allGetters()")
+	@Before("allCircleMethods()")
 	public void loggingAdvice() {
 		System.out.println("writing log before method is executed");
 	}
 	@Pointcut("execution(* aop..*.get*())")
 	public void allGetters() {}
+	
+	@Pointcut("within(aop.model.Circle)")
+	public void allCircleMethods() {}
 }
