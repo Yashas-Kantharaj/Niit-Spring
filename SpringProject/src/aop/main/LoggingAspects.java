@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 public class LoggingAspects {
-	@Before("execution(public String aop.model.Triangle.getName())")
+	@Before("execution(* aop.main..*.*(..))")
 	public void loggingAdvice() {
 		System.out.println("writing log before method is executed");
 	}
