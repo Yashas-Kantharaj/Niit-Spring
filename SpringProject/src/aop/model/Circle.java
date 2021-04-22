@@ -9,6 +9,7 @@ public class Circle {
 //	}
 
 	public String getName() {
+		System.out.println("inside get circle");
 		return name;
 	}
 

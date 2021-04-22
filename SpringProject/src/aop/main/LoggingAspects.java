@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-
+@Aspect
 public class LoggingAspects {
 //	@Before("allCircleMethods()")
 //	public void loggingAdvice() {
@@ -19,8 +19,11 @@ public class LoggingAspects {
 //	@Pointcut("within(aop.model.Circle)")
 //	public void allCircleMethods() {}
 	
-	
+	public void myLogginAdvice() {
+		System.out.println("my logging advice");
+	}
 
+	@Around("@annotation(aop.aspects.Loggable)")
 	public void myAroundAdvice(ProceedingJoinPoint pjp) {
 		
 		try {
