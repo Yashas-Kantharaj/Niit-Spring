@@ -1,5 +1,7 @@
 package jdbc.basic.dao;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,16 +17,17 @@ public class StudentDaoImpl  implements StudentDao{
 		String sql = "insert into student values (?,?,?,?)";
 		Object[] objects= {s.getId(),s.getName(),s.getSem(),s.getAverage()};
 
-		jt.update(sql, objects);
-	
+		int no_rows_inserted =	jt.update(sql,objects);
+		System.out.println("no of rows inserted  is"+ no_rows_inserted);
 	}
+	
 	
 	public  DataSource getDataSource() {
 		String url ="jdbc:mysql://localhost/spring_jdbc";
 		String userid = "root";
 		String pwd = "";
 		DriverManagerDataSource ds = new DriverManagerDataSource(url, userid, pwd);
-		System.out.print("Database is connected !");
+		System.out.println("Database is connected !");
 		return ds;
 		
 	}
