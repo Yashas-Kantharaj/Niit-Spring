@@ -3,9 +3,9 @@ package aop.model;
 public class Triangle {
 	String name;
 	
-	public Triangle() {
-		System.out.println("inside triangle");
-	}
+//	public Triangle() {
+//		System.out.println("inside triangle");
+//	}
 
 	public String getName() {
 		return name;

@@ -4,9 +4,9 @@ public class Circle {
 	String name;
 	
 
-	public Circle() {
-		System.out.println("inside circle");
-	}
+//	public Circle() {
+//		System.out.println("inside circle");
+//	}
 
 	public String getName() {
 		return name;
@@ -15,6 +15,7 @@ public class Circle {
 	public void setName(String name) {
 		System.out.println("setting name for circle");
 		this.name = name;
+		throw new RuntimeException();
 	}
 	public int getDia() {
 		return 5;
