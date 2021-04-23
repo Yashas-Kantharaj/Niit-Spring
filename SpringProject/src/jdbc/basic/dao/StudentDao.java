@@ -5,5 +5,6 @@ import jdbc.basic.model.Student;
 public interface StudentDao {
 	public void insert(Student s) ;
 	public void delRecordById(int id);
+	public int delRecordByNameORSem( String name, int sem);
 
 }

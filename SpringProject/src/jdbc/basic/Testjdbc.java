@@ -13,8 +13,8 @@ public class Testjdbc {
 		//Student s1= new Student(5, "rakesh", 8, 67);
 		StudentDao studentDao = (StudentDao) context.getBean("studentDao");
 		//studentDao.insert(s1);
-		studentDao.delRecordById(5);
-
+		//studentDao.delRecordById(5);
+		studentDao.delRecordByNameORSem("salman", 7);
 		
 	}
 }
