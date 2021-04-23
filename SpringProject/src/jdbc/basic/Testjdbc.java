@@ -10,9 +10,10 @@ import jdbc.basic.model.Student;
 public class Testjdbc {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
-		Student s1= new Student(5, "rakesh", 8, 67);
+		//Student s1= new Student(5, "rakesh", 8, 67);
 		StudentDao studentDao = (StudentDao) context.getBean("studentDao");
-		studentDao.insert(s1);
+		//studentDao.insert(s1);
+		studentDao.delRecordById(5);
 
 		
 	}

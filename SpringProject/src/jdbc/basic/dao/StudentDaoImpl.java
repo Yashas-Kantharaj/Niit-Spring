@@ -29,6 +29,14 @@ public class StudentDaoImpl  implements StudentDao{
 		int no_rows_inserted =	jdbcTemplate.update(sql,objects);
 		System.out.println("no of rows inserted  is"+ no_rows_inserted);
 	}
+
+	@Override
+	public void delRecordById(int id) {
+		String sqldel="delete from student where id = ?";
+		int noRecordDeleted = jdbcTemplate.update(sqldel,id);
+		System.out.println("no of records deleted is " +noRecordDeleted );
+		
+	}
 	
 	
 //	public  DataSource getDataSource() {
