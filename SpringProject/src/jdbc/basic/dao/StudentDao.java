@@ -11,5 +11,6 @@ public interface StudentDao {
 	 void insert(List<Student> students);
 	List<Student> getAllStudents();
 	Student findStudentById(int id);
+	List<Student> GroupBySem();
 
 }

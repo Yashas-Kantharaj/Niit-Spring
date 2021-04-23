@@ -74,7 +74,7 @@ public class StudentDaoImpl  implements StudentDao{
 	}
 	
 	@Override
-	public List<Student> getAllStudents() {
+	public  List<Student> getAllStudents() {
 		String sql = "SELECT * FROM STUDENT";
 		List<Student> students = jdbcTemplate.query(sql, new StudentRowMapper());
 		return students;
@@ -86,6 +86,14 @@ public class StudentDaoImpl  implements StudentDao{
 		Student student =	jdbcTemplate.queryForObject(sql, 
 				new BeanPropertyRowMapper<Student>(Student.class),id);
 		return student;
+	}
+
+	@Override
+	public List<Student> GroupBySem() {
+		String sql = "SELECT * FROM STUDENT order by sem";
+		List<Student> students = jdbcTemplate.query(sql, new StudentRowMapper());
+		return students;
+		
 	}
 	
 	

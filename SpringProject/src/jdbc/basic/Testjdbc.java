@@ -23,9 +23,9 @@ public class Testjdbc {
 		//studentDao.cleanUp();
 		//StudentHelper helper = context.getBean("studentdoeHelper",StudentHelper.class);
 		//elper.insertStudents();
-//		List<Student> students = studentDao.getAllStudents();
-//		printStudents(students);
-		System.out.println(studentDao.findStudentById(3));
+		List<Student> students = studentDao.GroupBySem();
+		printStudents(students);
+	
 		
 	}
 private static void printStudents(List<Student> students) {
