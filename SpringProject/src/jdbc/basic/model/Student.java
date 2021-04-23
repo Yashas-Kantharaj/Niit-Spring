@@ -5,6 +5,18 @@ public class Student {
 	String name;
 	int sem;
 	int average;
+	
+	public Student(int id, String name, int sem, int average) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sem = sem;
+		this.average = average;
+	}
+	public Student() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -29,14 +41,12 @@ public class Student {
 	public void setAverage(int average) {
 		this.average = average;
 	}
-	public Student(int id, String name, int sem, int average) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.sem = sem;
-		this.average = average;
-	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "\ntoString called\t"+name+"\t"+sem+"\t"+average;
+	}
 	
 
 	

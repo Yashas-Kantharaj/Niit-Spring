@@ -6,13 +6,17 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import jdbc.basic.model.Student;
 
-//@Repository("studentDoa")
+@Component
+@Repository("studentDoa")
 public class StudentDaoImpl  implements StudentDao{
 	
 	@Autowired
@@ -67,6 +71,21 @@ public class StudentDaoImpl  implements StudentDao{
 		}
 		
 		jdbcTemplate.batchUpdate(sql, sqlArgs);
+	}
+	
+	@Override
+	public List<Student> getAllStudents() {
+		String sql = "SELECT * FROM STUDENT";
+		List<Student> students = jdbcTemplate.query(sql, new StudentRowMapper());
+		return students;
+	}
+	
+	@Override
+	public Student findStudentById(int id) {
+		String sql = "SELECT * FROM STUDENT WHERE id = ?";
+		Student student =	jdbcTemplate.queryForObject(sql, 
+				new BeanPropertyRowMapper<Student>(Student.class),id);
+		return student;
 	}
 	
 	

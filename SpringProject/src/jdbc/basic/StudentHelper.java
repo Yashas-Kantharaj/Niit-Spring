@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import jdbc.basic.dao.StudentDao;
 import jdbc.basic.model.Student;
 
-@Service("studentdoeHelper")
+//@Service("studentdoeHelper")
 public class StudentHelper {
 	
 	@Autowired
