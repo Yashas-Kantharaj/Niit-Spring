@@ -1,5 +1,6 @@
 package jdbc.basic.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import jdbc.basic.model.Student;
 
-@Repository("studentDoa")
+//@Repository("studentDoa")
 public class StudentDaoImpl  implements StudentDao{
 	
 	@Autowired
@@ -46,6 +47,26 @@ public class StudentDaoImpl  implements StudentDao{
 		System.out.println("no of records deleted ="+ noRecordsDeleted);
 		return noRecordsDeleted;
 		
+	}
+	public void cleanUp() {
+		String sql = "TRUNCATE TABLE STUDENT";
+		jdbcTemplate.update(sql);
+		System.out.println("table cleaned");
+	}
+
+
+
+
+	@Override
+	public void insert(List<Student> students) {
+		String sql = "INSERT INTO student VALUES (?,?,?,?)";
+		ArrayList<Object[]> sqlArgs = new ArrayList<>();
+		for(Student student : students) {
+			Object[] studentData =	{student.getId(),student.getName(),student.getSem(),student.getAverage()};
+			sqlArgs.add(studentData);
+		}
+		
+		jdbcTemplate.batchUpdate(sql, sqlArgs);
 	}
 	
 	
