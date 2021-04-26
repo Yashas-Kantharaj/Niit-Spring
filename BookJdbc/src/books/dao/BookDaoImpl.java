@@ -20,12 +20,26 @@ public class BookDaoImpl implements BookDao{
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-	
+	Scanner scan = new Scanner(System.in);
 		
 	@Override
-	public void insert(Book b) {
+	public void insert() {
+		System.out.println("\nenter the id:");
+		int id = scan.nextInt();
+		scan.nextLine();
+		System.out.println("enter the book name:");
+		String name = scan.nextLine();
+		
+		System.out.println("enter the author name:");
+		String author = scan.nextLine();
+		
+		System.out.println("enter the price of book:");
+		int price = scan.nextInt();
+		
+		Book b1 = new Book(id,name,author,price);
+		
 		String sql = "insert into books values (?,?,?,?)";
-		Object[] objects= {b.getId(),b.getName(),b.getAuthor(),b.getPrice()};
+		Object[] objects= {b1.getId(),b1.getName(),b1.getAuthor(),b1.getPrice()};
 
 		int no_rows_inserted =	jdbcTemplate.update(sql,objects);
 		System.out.println("\nno of rows inserted  is "+ no_rows_inserted);
@@ -33,7 +47,9 @@ public class BookDaoImpl implements BookDao{
 	}
 
 	@Override
-	public void delById(int id) {
+	public void delById() {
+		System.out.println("\nenter the id of book you want to delete");
+		int id = scan.nextInt();
 		String sqldel="delete from books where id = ?";
 		int noRecordDeleted = jdbcTemplate.update(sqldel,id);
 		System.out.println("no of records deleted is " +noRecordDeleted );
@@ -55,7 +71,11 @@ public class BookDaoImpl implements BookDao{
 	}
 
 	@Override
-	public void updatePriceById(int id, int updatePrice) {
+	public void updatePriceById() {
+		System.out.println("\nenter the id of the book");
+		int id = scan.nextInt();
+		System.out.println("enter the updated price");
+		int updatePrice = scan.nextInt();
 		String sql = "update books set price = ? where id = ?";
 		int noRecordUpdated = jdbcTemplate.update(sql,updatePrice,id);
 		System.out.println("no of records updated is " +noRecordUpdated );
