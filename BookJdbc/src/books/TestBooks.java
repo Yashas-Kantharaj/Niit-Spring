@@ -42,7 +42,7 @@ public class TestBooks {
 			}
 			
 			case 0:{
-				System.out.println("\n\nthank you");
+				System.out.println("\nQUITTING\nthank you");
 				flag = false;
 				break;
 			}
