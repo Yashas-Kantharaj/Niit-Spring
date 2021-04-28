@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.sun.el.stream.Optional;
+
 
 @Service
 public class StudentService {
@@ -22,6 +24,10 @@ public class StudentService {
 	public List<Student> getStudents(){
 		createStudent();
 		return students;
+	}
+	public Student getStudentById(int id) {
+		Student student =	students.stream().filter(s -> s.getId() == id).findFirst().get();
+		return student;
 	}
 	
 }
