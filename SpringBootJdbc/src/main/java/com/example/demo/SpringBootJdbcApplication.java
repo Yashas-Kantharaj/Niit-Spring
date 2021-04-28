@@ -16,8 +16,9 @@ public class SpringBootJdbcApplication {
 		ApplicationContext context = SpringApplication.run(SpringBootJdbcApplication.class, args);
 		StudentDaoImpl studentdao = context.getBean(StudentDaoImpl.class);
 		
-		Student s = new Student(7,"ani",8,55);
-		studentdao.insert(s);
+		//Student s = new Student(7,"ani",8,55);
+		//studentdao.insert(s);
+		//studentdao.delRecordById(7);
 		studentdao.getAllStudents();
 	}
 
