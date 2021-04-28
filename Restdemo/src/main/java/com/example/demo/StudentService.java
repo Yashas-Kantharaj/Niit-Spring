@@ -30,9 +30,9 @@ public class StudentService {
 	
 	public void updateStudent(Student student,int id) {
 		for(int i = 0; i< students.size(); i++) {
-			Student s = students.get(0);
+			Student s = students.get(i);
 			if(s.getId() == id) {
-				students.set(id, student);
+				students.set(i, student);
 				return;
 			}
 		}
