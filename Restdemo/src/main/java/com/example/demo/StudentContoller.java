@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,7 +18,12 @@ public class StudentContoller {
 	StudentService studentService;
 	
 	@RequestMapping("students")
-	public List<Student> getStudent() {
+	public void getStudent() {
+		studentService.createStudent();
+	}
+		
+	@RequestMapping("students/show")
+	public List<Student> showStudent() {
 		return studentService.getStudents();
 	}
 	
@@ -23,5 +31,10 @@ public class StudentContoller {
 	@RequestMapping("/students/{id}")
 	public Student getStudendByid(@PathVariable int id) {
 		return studentService.getStudentById(id);
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "students/add")
+	public void addStudents(@RequestBody Student student) {
+		studentService.addStudent(student);
 	}
 }
