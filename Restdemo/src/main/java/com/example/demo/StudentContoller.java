@@ -37,4 +37,14 @@ public class StudentContoller {
 	public void addStudents(@RequestBody Student student) {
 		studentService.addStudent(student);
 	}
+	
+	@RequestMapping(method = RequestMethod.PUT, value = "students/update/{id}")
+	public void updateStudent(@RequestBody Student student, @PathVariable int id) {
+		studentService.updateStudent(student,id);
+	}
+	
+	@RequestMapping(method =  RequestMethod.DELETE, value = "students/delete/{id}")
+	public void  deleteStudent(@PathVariable int id) {
+		studentService.removeStudent(id);
+	}
 }
