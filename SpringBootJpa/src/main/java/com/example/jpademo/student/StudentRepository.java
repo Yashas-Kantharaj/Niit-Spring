@@ -1,4 +1,4 @@
-package com.example.jpademo;
+package com.example.jpademo.student;
 
 import org.springframework.data.repository.CrudRepository;
 

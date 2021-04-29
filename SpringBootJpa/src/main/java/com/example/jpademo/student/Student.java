@@ -1,4 +1,4 @@
-package com.example.jpademo;
+package com.example.jpademo.student;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,19 +9,16 @@ public class Student {
 	int id;
 	String name;
 	int sem;
-	int average;
 	
 	public Student(int id, String name, int sem, int average) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.sem = sem;
-		this.average = average;
 	}
 	public Student() {
 		
 	}
-	
 	public int getId() {
 		return id;
 	}
@@ -40,19 +37,5 @@ public class Student {
 	public void setSem(int sem) {
 		this.sem = sem;
 	}
-	public int getAverage() {
-		return average;
-	}
-	public void setAverage(int average) {
-		this.average = average;
-	}
-	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return id+"\t"+name+"\t"+sem+"\t"+average;
-	}
-	
-
 	
 }
