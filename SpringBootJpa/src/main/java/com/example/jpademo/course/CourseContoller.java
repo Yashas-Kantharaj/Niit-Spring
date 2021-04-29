@@ -34,7 +34,7 @@ public class CourseContoller {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "students/{studentID}/courses/add")
 	public void addCourse(@RequestBody Course course,@PathVariable int studentID) {
-		course.setStudent(new Student(studentID,"",0,0));
+		course.setStudent(new Student(studentID,"",0));
 		courseService.addCourse(course);
 	}
 	

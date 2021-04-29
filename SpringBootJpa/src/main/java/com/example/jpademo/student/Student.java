@@ -10,7 +10,7 @@ public class Student {
 	String name;
 	int sem;
 	
-	public Student(int id, String name, int sem, int average) {
+	public Student(int id, String name, int sem) {
 		super();
 		this.id = id;
 		this.name = name;

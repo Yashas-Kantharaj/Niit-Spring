@@ -1,37 +1,34 @@
-package com.example.jpademo.course;
+package com.example.jpademo.lesson;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.ManyToAny;
 
-
-import com.example.jpademo.student.Student;
-
-
+import com.example.jpademo.course.Course;
 
 @Entity
-public class Course {
+public class Lesson {
 	@Id
 	int id;
 	String name;
 	int sem;
-	
 	@ManyToOne
-	private Student student;
+	private Course course;
 	
-	public Course(int id, String name, int sem,int studentId) {
+	public Lesson(int id, String name, int sem, int average,int courseId,int studentId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.sem = sem;
-		this.student = new Student(studentId, "", 0);
+		this.course = new Course(courseId, "",0, studentId);
 		
 		
 		
 		
 	}
-	public Course() {
+	public Lesson() {
 		
 	}
 	
@@ -53,12 +50,13 @@ public class Course {
 	public void setSem(int sem) {
 		this.sem = sem;
 	}
-	public Student getStudent() {
-		return student;
+	public Course getCourse() {
+		return course;
 	}
-	public void setStudent(Student student) {
-		this.student = student;
+	public void setCourse(Course course) {
+		this.course = course;
 	}
+
 
 }
 	
