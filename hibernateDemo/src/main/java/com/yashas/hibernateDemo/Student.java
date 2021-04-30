@@ -9,12 +9,11 @@ import javax.persistence.Transient;
 public class Student {
 	@Id
 	int id;
-	//@Transient
-	String name;
+	StudentName name;
 	//@Column(name = "trimester")
 	int sem;
 	int average;
-	public Student(int id, String name, int sem, int avg) {
+	public Student(int id, StudentName name, int sem, int avg) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -28,23 +27,24 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
+
+	public StudentName getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(StudentName name) {
 		this.name = name;
+	}
+	public int getAverage() {
+		return average;
+	}
+	public void setAverage(int average) {
+		this.average = average;
 	}
 	public int getSem() {
 		return sem;
 	}
 	public void setSem(int sem) {
 		this.sem = sem;
-	}
-	public int getAvg() {
-		return average;
-	}
-	public void setAvg(int avg) {
-		this.average = avg;
 	}
 	@Override
 	public String toString() {
