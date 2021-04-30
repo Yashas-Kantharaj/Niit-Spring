@@ -46,5 +46,10 @@ public class Student {
 	public void setAvg(int avg) {
 		this.average = avg;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "\n"+id+"\t"+name+"\t"+sem+"\t"+average;
+	}
 	
 }

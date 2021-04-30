@@ -16,8 +16,9 @@ public class App
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        
-        session.save(student);
+        Student s1 = session.get(Student.class, 2);
+		System.out.println(s1);
+        //session.save(student);
         transaction.commit();
        
     }
