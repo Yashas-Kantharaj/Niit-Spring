@@ -5,13 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
-@Entity(name = "student_table")
+@Entity(name = "student")
 public class Student {
 	@Id
 	int id;
-	@Transient
+	//@Transient
 	String name;
-	@Column(name = "trimester")
+	//@Column(name = "trimester")
 	int sem;
 	int average;
 	public Student(int id, String name, int sem, int avg) {
