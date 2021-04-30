@@ -1,13 +1,17 @@
 package com.yashas.hibernateDemo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
-@Entity
+@Entity(name = "student_table")
 public class Student {
 	@Id
 	int id;
+	@Transient
 	String name;
+	@Column(name = "trimester")
 	int sem;
 	int average;
 	public Student(int id, String name, int sem, int avg) {
@@ -17,6 +21,7 @@ public class Student {
 		this.sem = sem;
 		this.average = avg;
 	}
+	public  Student() {}
 	public int getId() {
 		return id;
 	}
