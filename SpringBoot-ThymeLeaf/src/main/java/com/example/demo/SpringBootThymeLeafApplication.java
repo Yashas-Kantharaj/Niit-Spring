@@ -8,6 +8,7 @@ public class SpringBootThymeLeafApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootThymeLeafApplication.class, args);
+	
 	}
 
 }
